@@ -1,0 +1,31 @@
+.header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 104px;
+}
+
+.button_menu {
+  display: flex !important;
+  align-items: center;
+  font-weight: 600;
+  /* width: 140px; */
+}
+
+.button_menu::after {
+  border-bottom-color: #8dd3bb;
+  border-bottom-width: 4px !important;
+}
+
+.button_sign_up {
+  background: #000 !important;
+  color: white !important;
+  height: 48px !important;
+  font-weight: 600 !important;
+}
+
+.button_sign_up:hover {
+  background: #5a5a5a !important;
+  color: rgb(255, 255, 255) !important;
+}

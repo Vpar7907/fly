@@ -1,8 +1,15 @@
+import StyledComponentsRegistry from '@/shared/lib/antd/antd-registry'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
+import { ConfigProvider } from 'antd'
+import theme from '@/shared/theme/theme-config'
+import { Header } from '@/widgets/header'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +23,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <StyledComponentsRegistry >
+          <ConfigProvider theme={theme}>
+            <Header />
+            <main>{children}</main>
+            <footer>футер</footer>
+          </ConfigProvider>
+        </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
